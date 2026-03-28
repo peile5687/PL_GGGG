@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "name": "星岚小冒险对抗版",
+    "version": "0.1.0",
+    "max_rounds": 8,
+    "random_seed": 42
+  },
+  "hit_formula": {
+    "dice": "d6",
+    "hit_when": "roll + attacker_atk >= target_eva + 4",
+    "base_damage": 1
+  },
+  "factions": {
+    "heroes": ["hero_a", "hero_b", "hero_c"],
+    "villains": ["boss", "minion"]
+  },
+  "characters": {
+    "hero_a": {
+      "name": "晨刃",
+      "faction": "heroes",
+      "hp": 6,
+      "atk": 2,
+      "eva": 2,
+      "skills": ["focused_strike", "guard_stance"]
+    },
+    "hero_b": {
+      "name": "雾羽",
+      "faction": "heroes",
+      "hp": 6,
+      "atk": 2,
+      "eva": 2,
+      "skills": ["quick_shot", "rescue_light"]
+    },
+    "hero_c": {
+      "name": "苔铃",
+      "faction": "heroes",
+      "hp": 6,
+      "atk": 2,
+      "eva": 2,
+      "skills": ["steady_blow", "team_banner"]
+    },
+    "boss": {
+      "name": "夜渊主宰",
+      "faction": "villains",
+      "hp": 10,
+      "atk": 3,
+      "eva": 1,
+      "skills": ["dark_cleave", "command_roar", "shadow_shield"]
+    },
+    "minion": {
+      "name": "影侍",
+      "faction": "villains",
+      "hp": 7,
+      "atk": 2,
+      "eva": 2,
+      "skills": ["cripple_mark", "bodyguard_shift"]
+    }
+  },
+  "skills": {
+    "focused_strike": {
+      "type": "active",
+      "cooldown": 1,
+      "effect": "single_hit_plus_damage",
+      "value": 1,
+      "uses": 99
+    },
+    "guard_stance": {
+      "type": "active",
+      "cooldown": 1,
+      "effect": "gain_shield",
+      "value": 1,
+      "uses": 99
+    },
+    "quick_shot": {
+      "type": "active",
+      "cooldown": 1,
+      "effect": "single_hit_plus_hit",
+      "value": 1,
+      "uses": 99
+    },
+    "rescue_light": {
+      "type": "active",
+      "cooldown": 2,
+      "effect": "heal_ally",
+      "value": 1,
+      "uses": 3
+    },
+    "steady_blow": {
+      "type": "active",
+      "cooldown": 1,
+      "effect": "single_hit_plus_damage",
+      "value": 1,
+      "uses": 99
+    },
+    "team_banner": {
+      "type": "active",
+      "cooldown": 2,
+      "effect": "team_atk_buff",
+      "value": 1,
+      "uses": 3
+    },
+    "dark_cleave": {
+      "type": "active",
+      "cooldown": 1,
+      "effect": "single_hit_plus_damage",
+      "value": 2,
+      "uses": 99
+    },
+    "command_roar": {
+      "type": "active",
+      "cooldown": 2,
+      "effect": "enemy_atk_debuff",
+      "value": 1,
+      "uses": 4
+    },
+    "shadow_shield": {
+      "type": "active",
+      "cooldown": 2,
+      "effect": "gain_shield",
+      "value": 2,
+      "uses": 4
+    },
+    "cripple_mark": {
+      "type": "active",
+      "cooldown": 2,
+      "effect": "enemy_eva_debuff",
+      "value": 1,
+      "uses": 4
+    },
+    "bodyguard_shift": {
+      "type": "active",
+      "cooldown": 2,
+      "effect": "intercept_for_boss",
+      "value": 1,
+      "uses": 4
+    }
+  },
+  "actions": ["attack", "defend", "skill", "assist"]
+}
